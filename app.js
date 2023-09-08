@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 // Modules
 const user = require('./modules/users');
 const functions = require('./functions');
+const conversations = require('./modules/conversations');
 
 // Login and requests
 const login = require('./modules/login');
@@ -27,6 +28,7 @@ connectDB();
 
 // Routes
 app.use('/users', user.userRoutes);
+app.use('/conversations', conversations.conversationRoutes);
 app.use('/functions', functions.functionRoutes);
 
 // Login
